@@ -3,7 +3,6 @@ window.onload = () => {
     virtualPadMapping();
 };
 
-
 const keyboardMapping = () => {
     const results = document.getElementById("results");
     const operationBox = document.getElementById("operations");
@@ -81,6 +80,9 @@ const operationKeyDownEvent = (results, operationBox, key) => {
         case ".": 
             operationBox.match(/[.]/) == null ? operationBox += "." : null;
             break;
+        case "x²": 
+            operationBox = Math.pow(operationBox, 2);
+            break;
         default:
             if(results.match(/[-+*⅟×±÷]/) != null){
                 const strOperation = results + " " + operationBox + " =";
@@ -91,7 +93,7 @@ const operationKeyDownEvent = (results, operationBox, key) => {
                 results = operationBox + " " + key;
                 operationBox = "";
             };
-    }
+    };
     return [results, operationBox];
 };
 
@@ -111,4 +113,4 @@ const solveOperation = (strOperation) => {
     const operation = splitOperation[1];
     const solverObj = {"+": x+y, "-": x-y, "*": x*y, "×": x*y, "/": x/y, "%": x%y, "÷": x/y };
     return solverObj[operation];
-}
+};

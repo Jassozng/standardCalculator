@@ -8,11 +8,15 @@ body {
 }
 
 header {
+    display: flex; 
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
     min-height: 1.5rem;
     text-align: center;
-    justify-content: center;
     background-color: #212227;
     color: #ffff;
+    min-width: -moz-available;
 }
 
 footer {
@@ -21,6 +25,18 @@ footer {
     text-align: center;
     justify-content: center;
     background-color: #212227;
+}
+
+header img {
+    align-self: flex-end;
+    margin-right: 1rem;
+}
+
+header h1 {
+    margin: 0 0 0 1rem;
+    font-size: 1rem;
+    max-height: 1rem;
+    justify-content: center;
 }
 
 footer a {
